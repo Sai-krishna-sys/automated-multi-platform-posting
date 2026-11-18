@@ -16,7 +16,7 @@ venv\Scripts\pip install -r requirements.txt
 3. Run the API:
 
 ```bash
-venv\Scripts\uvicorn app.main:app --reload
+venv\Scripts\uvicorn app.main:app --reload --port 4000
 ```
 
 4. Run tests:
@@ -36,7 +36,7 @@ venv\Scripts\pytest
 ## Sample request
 
 ```bash
-curl -X POST http://127.0.0.1:8000/posting \
+curl -X POST http://127.0.0.1:4000/posting \
   -H "Content-Type: application/json" \
   -d '{"message": "Testing my automated multi-platform posting system https://example.com"}'
 ```
@@ -97,8 +97,6 @@ curl -X POST http://127.0.0.1:8000/posting \
 
 ## Known limitations
 
+- Confirmed real posting: Bluesky, Telegram, Mastodon, and LinkedIn.
 - X real posting is not verified because API credits are depleted.
-- Confirmed real posting: Telegram and LinkedIn.
-- Bluesky authentication was verified, but a full real post was not performed.
-- Mastodon real posting was not verified.
 - Platform behavior depends on valid credentials and external API availability.
